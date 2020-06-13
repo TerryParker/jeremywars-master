@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+//import Api from '../components/server';
 
 function Home () {
+    const [character, setCharacter] = useState([]);
 
     const handleSubmit = event => {
-        alert("You did it!");
+        event.preventDefault();
+        event.stopPropagation();
+        const userInput = document.getElementById('1')
+        var starWarsCharacter = userInput.value;
+        console.log(starWarsCharacter);
+        fetch(`/people/?search=${starWarsCharacter}`, {
+        headers: {
+            "Accept": "application/json"
+        }})
+        .then(resp => resp.json()
+        .then(json => {
+            console.log(json);
+            setCharacter( json.results);
+        }));
     }
 
     return (
@@ -16,11 +31,13 @@ function Home () {
                 <Form.Control 
                 required
                 type="name"
+                id="1"
                 placeholder="Luke Skywalker"
                 />
                 {' '}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
+            <h1></h1>
         </div>
         </>
     );
