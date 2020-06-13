@@ -36,6 +36,7 @@ function Home () {
                 {' '}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
+            <h1>Probably display the results here.</h1>
         </div>
         </>
     );
