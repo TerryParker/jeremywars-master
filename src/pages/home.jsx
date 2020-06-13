@@ -36,7 +36,6 @@ function Home () {
                 {' '}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
-            <h1></h1>
         </div>
         </>
     );
