@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-//import Api from '../components/server';
 
 function Home () {
     const [character, setCharacter] = useState([]);
