@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Form, Button, ListGroup } from 'react-bootstrap';
 
 function Home () {
     const [character, setCharacter] = useState([]);
+    useEffect(() => console.log(character), [character]);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -36,6 +37,43 @@ function Home () {
                 {' '}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
+            {
+                character.map(val =>(
+                    <ListGroup>
+                    <ListGroup.Item key={val.name}>
+                        <h1>
+                            
+                            {val.name}
+                        </h1>
+                    </ListGroup.Item>
+                    <ListGroup.Item key={val.height}>
+                        <div>
+                            Height: {' '}
+                            {val.height}
+                        </div>
+                    </ListGroup.Item>
+                    <ListGroup.Item key={val.hair_color}>
+                        <div>
+                            Hair Color: {' '}
+                            {val.hair_color}
+                        </div>
+                    </ListGroup.Item>
+                    <ListGroup.Item key={val.gender}>
+                        <div>
+                            Gender: {' '}
+                            {val.gender}
+                        </div>
+                    </ListGroup.Item>
+                    <ListGroup.Item key={val.created}>
+                        <div>
+                            Created: {' '}
+                            {val.created}
+                        </div>
+                    </ListGroup.Item>
+                    </ListGroup>
+                )
+                    )
+            }
         </div>
         </>
     );
