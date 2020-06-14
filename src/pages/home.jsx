@@ -20,10 +20,12 @@ function Home () {
             console.log(json);
             setCharacter( json.results);
         }));
+        console.log(character.created);
     }
-
+    
     return (
         <>
+        
         <h1>Star Wars Character</h1>
         <div style={{ margin: 12}}>
             <Form onSubmit={handleSubmit}>
@@ -37,9 +39,10 @@ function Home () {
                 {' '}
                 <Button variant="primary" type="submit">Submit</Button>
             </Form>
+            <div>
             {
                 character.map(val =>(
-                    <ListGroup>
+                    <ListGroup key={character}>
                     <ListGroup.Item key={val.name}>
                         <h1>
                             
@@ -67,13 +70,14 @@ function Home () {
                     <ListGroup.Item key={val.created}>
                         <div>
                             Created: {' '}
-                            {val.created}
+                            {val.created.substr(0,10)}
                         </div>
                     </ListGroup.Item>
                     </ListGroup>
                 )
                     )
             }
+            </div>
         </div>
         </>
     );
