@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, ListGroup } from 'react-bootstrap';
+import { Form, ListGroup, Image } from 'react-bootstrap';
+import ship from "../assets/mfalcon.png";
 
 function Home () {
     const [character, setCharacter] = useState([]);
@@ -37,7 +38,7 @@ function Home () {
                         placeholder="Luke Skywalker"
                         />
                         {' '}
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <Image type="submit" src={ship} style={{ height: "20px", width: "35px"}} onClick={handleSubmit} />
                     </Form>
                     <div>
                     {
