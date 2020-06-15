@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button';
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
-function PlanetSearch () {
-    const [planet, setPlanet] = useState([]);
-    useEffect(() => console.log(planet), [planet]);
+function VehicleSearch () {
+    const [vehicle, setVehicle] = useState([]);
+    useEffect(() => console.log(vehicle), [vehicle]);
 
    const playAudio = () => {
         const submitAudio = document.getElementsByClassName("submit-audio")[0]
@@ -17,16 +17,16 @@ function PlanetSearch () {
         event.preventDefault();
         event.stopPropagation();
         const userInput = document.getElementById('1')
-        var starWarsPlanet = userInput.value;
-        console.log(starWarsPlanet);
-        fetch(`/planets/?search=${starWarsPlanet}`, {
+        var starWarsVehicle = userInput.value;
+        console.log(starWarsVehicle);
+        fetch(`/vehicles/?search=${starWarsVehicle}`, {
         headers: {
             "Accept": "application/json"
         }})
         .then(resp => resp.json()
         .then(json => {
             console.log(json);
-            setPlanet( json.results);
+            setVehicle( json.results);
         }));
         playAudio();
     }
@@ -38,12 +38,12 @@ function PlanetSearch () {
             <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
                     <Form onSubmit={handleSubmit}>
-                        <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Planet: </Form.Label>
+                        <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Vehicle: </Form.Label>
                         <Form.Control 
                         required
                         type="name"
                         id="1"
-                        placeholder="Tatooine"
+                        placeholder="Sand Crawler"
                         />
                         {' '}
                         <Button type="submit" variant="contained" >Submit</Button>
@@ -53,29 +53,29 @@ function PlanetSearch () {
                     </Form>
                     <div class="crawl">
                     {
-                        planet.map(val =>(
-                            <ListGroup key={planet}>
+                        vehicle.map(val =>(
+                            <ListGroup key={vehicle}>
                             <ListGroup.Item key={val.name}>
                                 <div className="characterName">
                                     {val.name}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.population}>
+                            <ListGroup.Item key={val.model}>
                                 <div class="attributes">
-                                    Population: {' '}
-                                    {val.population}
+                                    Model: {' '}
+                                    {val.model}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.diameter}>
+                            <ListGroup.Item key={val.length}>
                                 <div class="attributes">
-                                    Diameter: {' '}
-                                    {val.diameter}
+                                    Length: {' '}
+                                    {val.length}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.terrain}>
+                            <ListGroup.Item key={val.crew}>
                                 <div class="attributes">
-                                    Terrain: {' '}
-                                    {val.terrain}
+                                    Crew: {' '}
+                                    {val.crew}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.created}>
@@ -84,10 +84,10 @@ function PlanetSearch () {
                                     {val.created.substr(0,10)}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.orbital_period}>
+                            <ListGroup.Item key={val.cargo_capacity}>
                                 <div class="attributes">
-                                    Orbital Period: {' '}
-                                    {val.orbital_period}
+                                    Cargo Capacity: {' '}
+                                    {val.cargo_capacity}
                                 </div>
                             </ListGroup.Item>
                             </ListGroup>
@@ -102,4 +102,4 @@ function PlanetSearch () {
     );
 }
 
-export default PlanetSearch;
+export default VehicleSearch;
