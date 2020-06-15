@@ -7,11 +7,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `1. node server.js`
+### `1.npm install`
+
+Once the repository is on your computer the first thing to do is within the terminal do npm install. This will allow for the two commands next (node & yarn) to be able to be executed within the directoy.
+
+### `2. node server.js`
 
 This will start up the Node(Express) server that is connecting to the SWAPI. This will set up the server on port 3001.
 
-### `2. yarn start`
+### `3. yarn start`
 
 Do this in a separate Terminal then the one use for the server!!!!
 Runs the app in the development mode.<br />
