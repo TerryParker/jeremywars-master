@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, ListGroup, Button } from 'react-bootstrap';
-import './CharacterSearch.css';
+import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
 function CharacterSearch () {
