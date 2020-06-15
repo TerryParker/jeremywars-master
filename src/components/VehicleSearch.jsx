@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, ListGroup, Button, Col} from 'react-bootstrap';
+import { Form, Button, Col} from 'react-bootstrap';
 
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
@@ -56,43 +56,36 @@ function VehicleSearch () {
                     <div className="crawl">
                     {
                         vehicle.map(val =>(
-                            <ListGroup key={vehicle}>
-                            <ListGroup.Item key={val.name}>
+                            <>
                                 <div className="characterName">
                                     {val.name}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.model}>
+
                                 <div className="attributes">
                                     Model: {' '}
                                     {val.model}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.length}>
+
                                 <div className="attributes">
                                     Length: {' '}
                                     {val.length}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.crew}>
+                                
                                 <div className="attributes">
                                     Crew: {' '}
                                     {val.crew}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.created}>
+
                                 <div className="attributes">
                                     Created: {' '}
                                     {val.created.substr(0,10)}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.cargo_capacity}>
+
                                 <div className="attributes">
                                     Cargo Capacity: {' '}
                                     {val.cargo_capacity}
                                 </div>
-                            </ListGroup.Item>
-                            </ListGroup>
+                            </>
                         )
                         )
                     }
