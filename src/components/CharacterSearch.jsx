@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, ListGroup, Button } from 'react-bootstrap';
+import { Form, ListGroup} from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
@@ -45,7 +46,7 @@ function CharacterSearch () {
                         placeholder="Luke Skywalker"
                         />
                         {' '}
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit" variant="contained" size="small">Submit</Button>
                             <audio className="submit-audio">
                                 <source src={starwarsAudio}/>
                             </audio>
