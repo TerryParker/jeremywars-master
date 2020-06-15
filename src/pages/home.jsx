@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, ListGroup } from 'react-bootstrap';
+import { Form, ListGroup, Button } from 'react-bootstrap';
+import './home.css';
+import starwarsAudio from '../assets/starwarsTheme.mp3';
 
 function Home () {
     const [character, setCharacter] = useState([]);
     useEffect(() => console.log(character), [character]);
+
+   const playAudio = () => {
+        const submitAudio = document.getElementsByClassName("submit-audio")[0]
+        submitAudio.play()
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -20,13 +27,14 @@ function Home () {
             console.log(json);
             setCharacter( json.results);
         }));
+        playAudio();
     }
     
     return (
         <>
-        <div>
+        <div class="starwarsFont">
             <center>
-            <h1 style={{color: "yellow"}}>Star Wars Character</h1>
+            <h1  style={{color: "yellow"}}>Star Wars Character</h1>
                 <div >
                     <Form onSubmit={handleSubmit}>
                         <Form.Label style={{color: "yellow"}}>Name of Character: </Form.Label>
@@ -37,7 +45,10 @@ function Home () {
                         placeholder="Luke Skywalker"
                         />
                         {' '}
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <Button type="submit">Submit</Button>
+                            <audio className="submit-audio">
+                                <source src={starwarsAudio}/>
+                            </audio>
                     </Form>
                     <div>
                     {
@@ -45,7 +56,6 @@ function Home () {
                             <ListGroup key={character}>
                             <ListGroup.Item key={val.name}>
                                 <h1 style={{color: "yellow"}}>
-                                    
                                     {val.name}
                                 </h1>
                             </ListGroup.Item>
@@ -75,7 +85,7 @@ function Home () {
                             </ListGroup.Item>
                             </ListGroup>
                         )
-                            )
+                        )
                     }
                     </div>
                 </div>
