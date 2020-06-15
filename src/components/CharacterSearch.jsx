@@ -50,7 +50,7 @@ function CharacterSearch () {
                                 <source src={starwarsAudio}/>
                             </audio>
                     </Form>
-                    <div>
+                    <div class="crawl">
                     {
                         character.map(val =>(
                             <ListGroup key={character}>
@@ -81,6 +81,12 @@ function CharacterSearch () {
                                 <div style={{color: "yellow"}}>
                                     Created: {' '}
                                     {val.created.substr(0,10)}
+                                </div>
+                            </ListGroup.Item>
+                            <ListGroup.Item key={val.birth_year}>
+                                <div style={{color: "yellow"}}>
+                                    Birth Year: {' '}
+                                    {val.birth_year}
                                 </div>
                             </ListGroup.Item>
                             </ListGroup>
