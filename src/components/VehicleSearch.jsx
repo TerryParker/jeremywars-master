@@ -33,7 +33,7 @@ function VehicleSearch () {
     
     return (
         <>
-        <div className="starwarsFont">
+        <div className="starwarsFont top-space">
             <center>
             <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
