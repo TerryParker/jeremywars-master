@@ -35,10 +35,10 @@ function CharacterSearch () {
         <>
         <div class="starwarsFont">
             <center>
-            <h1  style={{color: "yellow"}}>Star Wars </h1>
+            <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
                     <Form onSubmit={handleSubmit}>
-                        <Form.Label style={{color: "yellow"}}>Name of Character: </Form.Label>
+                        <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Character: </Form.Label>
                         <Form.Control 
                         required
                         type="name"
@@ -46,7 +46,7 @@ function CharacterSearch () {
                         placeholder="Luke Skywalker"
                         />
                         {' '}
-                        <Button type="submit" variant="contained" size="small">Submit</Button>
+                        <Button type="submit" variant="contained" >Submit</Button>
                             <audio className="submit-audio">
                                 <source src={starwarsAudio}/>
                             </audio>
@@ -56,36 +56,36 @@ function CharacterSearch () {
                         character.map(val =>(
                             <ListGroup key={character}>
                             <ListGroup.Item key={val.name}>
-                                <h1 style={{color: "yellow"}}>
+                                <div className="characterName">
                                     {val.name}
-                                </h1>
+                                </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.height}>
-                                <div style={{color: "yellow"}}>
+                                <div class="attributes">
                                     Height: {' '}
                                     {val.height}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.hair_color}>
-                                <div style={{color: "yellow"}}>
+                                <div class="attributes">
                                     Hair Color: {' '}
                                     {val.hair_color}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.gender}>
-                                <div style={{color: "yellow"}}>
+                                <div class="attributes">
                                     Gender: {' '}
                                     {val.gender}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.created}>
-                                <div style={{color: "yellow"}}>
+                                <div class="attributes">
                                     Created: {' '}
                                     {val.created.substr(0,10)}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.birth_year}>
-                                <div style={{color: "yellow"}}>
+                                <div class="attributes">
                                     Birth Year: {' '}
                                     {val.birth_year}
                                 </div>

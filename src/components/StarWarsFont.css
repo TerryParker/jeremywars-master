@@ -20,3 +20,11 @@
         transform: rotateX(25deg) translateZ(0);
     }
 }
+.attributes {
+    color: yellow; 
+    font-size: 25px;
+}
+.characterName {
+    color: yellow;
+     font-size: 50px;
+}
