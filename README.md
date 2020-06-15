@@ -3,7 +3,7 @@ Website to display basic character information from the movie Star Wars using th
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Scripts to run in order
+## How to Compile the Code
 
 In the project directory, you can run:
 
