@@ -34,7 +34,7 @@ function CharacterSearch () {
         <>
         <div class="starwarsFont">
             <center>
-            <h1  style={{color: "yellow"}}>Star Wars Character</h1>
+            <h1  style={{color: "yellow"}}>Star Wars </h1>
                 <div >
                     <Form onSubmit={handleSubmit}>
                         <Form.Label style={{color: "yellow"}}>Name of Character: </Form.Label>
@@ -50,7 +50,7 @@ function CharacterSearch () {
                                 <source src={starwarsAudio}/>
                             </audio>
                     </Form>
-                    <div>
+                    <div class="crawl">
                     {
                         character.map(val =>(
                             <ListGroup key={character}>
@@ -81,6 +81,12 @@ function CharacterSearch () {
                                 <div style={{color: "yellow"}}>
                                     Created: {' '}
                                     {val.created.substr(0,10)}
+                                </div>
+                            </ListGroup.Item>
+                            <ListGroup.Item key={val.birth_year}>
+                                <div style={{color: "yellow"}}>
+                                    Birth Year: {' '}
+                                    {val.birth_year}
                                 </div>
                             </ListGroup.Item>
                             </ListGroup>
