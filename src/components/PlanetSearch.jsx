@@ -51,7 +51,7 @@ function PlanetSearch () {
                                 <source src={starwarsAudio}/>
                             </audio>
                     </Form>
-                    <div class="crawl">
+                    <div className="crawl">
                     {
                         planet.map(val =>(
                             <ListGroup key={planet}>
@@ -61,31 +61,31 @@ function PlanetSearch () {
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.population}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Population: {' '}
                                     {val.population}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.diameter}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Diameter: {' '}
                                     {val.diameter}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.terrain}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Terrain: {' '}
                                     {val.terrain}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.created}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Created: {' '}
                                     {val.created.substr(0,10)}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.orbital_period}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Orbital Period: {' '}
                                     {val.orbital_period}
                                 </div>

@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import Home from './pages/home';
 import Planet from './pages/Planet';
 import Vehicle from './pages/Vehicle';
+import Species from './pages/Species'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/home" component={Home}/>
         <Route exact path="/planet" component={Planet}/>
         <Route exact path="/vehicle" component={Vehicle}/>
+        <Route exact path="/species" component={Species}/>
         <Route render={() => <h1>404: Page not found</h1>}/>
       </Switch>
     </Router>

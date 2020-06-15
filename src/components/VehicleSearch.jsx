@@ -33,7 +33,7 @@ function VehicleSearch () {
     
     return (
         <>
-        <div class="starwarsFont">
+        <div className="starwarsFont">
             <center>
             <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
@@ -51,7 +51,7 @@ function VehicleSearch () {
                                 <source src={starwarsAudio}/>
                             </audio>
                     </Form>
-                    <div class="crawl">
+                    <div className="crawl">
                     {
                         vehicle.map(val =>(
                             <ListGroup key={vehicle}>
@@ -61,31 +61,31 @@ function VehicleSearch () {
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.model}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Model: {' '}
                                     {val.model}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.length}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Length: {' '}
                                     {val.length}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.crew}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Crew: {' '}
                                     {val.crew}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.created}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Created: {' '}
                                     {val.created.substr(0,10)}
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.cargo_capacity}>
-                                <div class="attributes">
+                                <div className="attributes">
                                     Cargo Capacity: {' '}
                                     {val.cargo_capacity}
                                 </div>
