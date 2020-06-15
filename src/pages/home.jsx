@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Button from '@material-ui/core/Button';
+import {Button} from 'react-bootstrap';
 import CharacterSearch from '../components/CharacterSearch';
 import HomeInfo from '../components/HomeInformation';
 
@@ -22,7 +22,7 @@ function Home () {
         {display ? <CharacterSearch/> : <HomeInfo/> }
         </div>
         <center>
-        <Button id="learn" variant="contained"  size="large" onClick={handleSubmit}>This Button</Button>
+        <Button id="learn" variant="dark" size="lg"  onClick={handleSubmit}>This Button</Button>
         </center>
         </>
     );
