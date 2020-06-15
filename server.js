@@ -29,4 +29,16 @@ app.get('/planets', (req, res) => {
     });
 });
 
+app.get('/vehicles', (req, res) => {
+    let query = req.query.search;
+    console.log(query);
+    swapi.get('https://swapi.dev/api/vehicles/?search=' + query).then((result) =>{
+        console.log(result.results);
+        let results = result.results;
+        res.send({ results });
+    }).catch((err) => {
+        console.log(err);
+    });
+});
+
 app.listen(3001, () => console.log('Listening on Port 3001.'))
