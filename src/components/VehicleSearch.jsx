@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, ListGroup} from 'react-bootstrap';
-import Button from '@material-ui/core/Button';
+import { Form, ListGroup, Button, Col} from 'react-bootstrap';
+
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
@@ -38,15 +38,17 @@ function VehicleSearch () {
             <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
                     <Form onSubmit={handleSubmit}>
+                    <Col sm={3}>
                         <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Vehicle: </Form.Label>
                         <Form.Control 
                         required
+                        size="lg"
                         type="name"
                         id="1"
                         placeholder="Sand Crawler"
                         />
-                        {' '}
-                        <Button type="submit" variant="contained" >Submit</Button>
+                    </Col>
+                        <Button type="submit" variant="outline-light" size="lg">Submit</Button>
                             <audio className="submit-audio">
                                 <source src={starwarsAudio}/>
                             </audio>
