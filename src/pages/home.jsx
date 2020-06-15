@@ -1,29 +1,13 @@
-import React, {useState} from 'react';
-import {Button} from 'react-bootstrap';
-import CharacterSearch from '../components/CharacterSearch';
+import React from 'react';
 import HomeInfo from '../components/HomeInformation';
 
 function Home () {
-    const [display, setDisplay] = useState(false);
-
-    const handleSubmit= () => {
-        var hideButton = document.getElementById("learn");
-        if(hideButton.style.display === "none"){
-            hideButton.style.display = "block";
-        } else {
-            hideButton.style.display = "none";
-        }
-        setDisplay(true);
-
-    }
     return (
         <>
         <div>
-        {display ? <CharacterSearch/> : <HomeInfo/> }
+        <HomeInfo/> 
         </div>
-        <center>
-        <Button id="learn" variant="dark" size="lg"  onClick={handleSubmit}>This Button</Button>
-        </center>
+       
         </>
     );
 }
