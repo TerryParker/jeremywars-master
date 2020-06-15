@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button';
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
-function CharacterSearch () {
-    const [character, setCharacter] = useState([]);
-    useEffect(() => console.log(character), [character]);
+function SpeciesSearch () {
+    const [species, setSpecies] = useState([]);
+    useEffect(() => console.log(species), [species]);
 
    const playAudio = () => {
         const submitAudio = document.getElementsByClassName("submit-audio")[0]
@@ -17,16 +17,16 @@ function CharacterSearch () {
         event.preventDefault();
         event.stopPropagation();
         const userInput = document.getElementById('1')
-        var starWarsCharacter = userInput.value;
-        console.log(starWarsCharacter);
-        fetch(`/people/?search=${starWarsCharacter}`, {
+        var starWarsSpecies = userInput.value;
+        console.log(starWarsSpecies);
+        fetch(`/species/?search=${starWarsSpecies}`, {
         headers: {
             "Accept": "application/json"
         }})
         .then(resp => resp.json()
         .then(json => {
             console.log(json);
-            setCharacter( json.results);
+            setSpecies( json.results);
         }));
         playAudio();
     }
@@ -38,12 +38,12 @@ function CharacterSearch () {
             <div style={{color: "yellow", fontSize:"70px"}}>Star Wars </div>
                 <div >
                     <Form onSubmit={handleSubmit}>
-                        <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Character: </Form.Label>
+                        <Form.Label style={{color: "yellow", fontSize:"30px"}}>Name of Species: </Form.Label>
                         <Form.Control 
                         required
                         type="name"
                         id="1"
-                        placeholder="Luke Skywalker"
+                        placeholder="Wookie"
                         />
                         {' '}
                         <Button type="submit" variant="contained" >Submit</Button>
@@ -53,29 +53,33 @@ function CharacterSearch () {
                     </Form>
                     <div className="crawl">
                     {
-                        character.map(val =>(
-                            <ListGroup key={character}>
+                        species.map(val =>(
+                            <ListGroup key={species}>
                             <ListGroup.Item key={val.name}>
                                 <div className="characterName">
                                     {val.name}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.height}>
+                            <ListGroup.Item key={val.language}>
                                 <div className="attributes">
-                                    Height: {' '}
-                                    {val.height}
+                                    Language: {' '}
+                                    {val.language}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.hair_color}>
+                            <ListGroup.Item key={val.average_height}>
                                 <div className="attributes">
-                                    Hair Color: {' '}
-                                    {val.hair_color}
+                                    Average Height: {' '}
+                                    {val.average_height}
+                                    {' '}
+                                    cm
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.gender}>
+                            <ListGroup.Item key={val.average_lifespan}>
                                 <div className="attributes">
-                                    Gender: {' '}
-                                    {val.gender}
+                                    Average Lifespan: {' '}
+                                    {val.average_lifespan}
+                                    {' '}
+                                    years
                                 </div>
                             </ListGroup.Item>
                             <ListGroup.Item key={val.created}>
@@ -84,10 +88,10 @@ function CharacterSearch () {
                                     {val.created.substr(0,10)}
                                 </div>
                             </ListGroup.Item>
-                            <ListGroup.Item key={val.birth_year}>
+                            <ListGroup.Item key={val.classification}>
                                 <div className="attributes">
-                                    Birth Year: {' '}
-                                    {val.birth_year}
+                                    Classification: {' '}
+                                    {val.classification}
                                 </div>
                             </ListGroup.Item>
                             </ListGroup>
@@ -102,4 +106,4 @@ function CharacterSearch () {
     );
 }
 
-export default CharacterSearch;
+export default SpeciesSearch;
