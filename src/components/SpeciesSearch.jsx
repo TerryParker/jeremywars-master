@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, ListGroup, Button, Col} from 'react-bootstrap';
+import { Form, Button, Col} from 'react-bootstrap';
 import './StarWarsFont.css';
 import starwarsAudio from '../assets/starwarsTheme.mp3';
 
@@ -55,47 +55,40 @@ function SpeciesSearch () {
                     <div className="crawl">
                     {
                         species.map(val =>(
-                            <ListGroup key={species}>
-                            <ListGroup.Item key={val.name}>
+                            <>
                                 <div className="characterName">
                                     {val.name}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.language}>
+                           
                                 <div className="attributes">
                                     Language: {' '}
                                     {val.language}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.average_height}>
+                            
                                 <div className="attributes">
                                     Average Height: {' '}
                                     {val.average_height}
                                     {' '}
                                     cm
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.average_lifespan}>
+                            
                                 <div className="attributes">
                                     Average Lifespan: {' '}
                                     {val.average_lifespan}
                                     {' '}
                                     years
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.created}>
+                            
                                 <div className="attributes">
                                     Created: {' '}
                                     {val.created.substr(0,10)}
                                 </div>
-                            </ListGroup.Item>
-                            <ListGroup.Item key={val.classification}>
+                            
                                 <div className="attributes">
                                     Classification: {' '}
                                     {val.classification}
                                 </div>
-                            </ListGroup.Item>
-                            </ListGroup>
+                            </>
                         )
                         )
                     }
