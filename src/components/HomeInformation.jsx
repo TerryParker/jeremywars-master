@@ -1,5 +1,6 @@
 import React from 'react';
 import './StarWarsFont.css';
+import {Button} from 'react-bootstrap';
 
 function HomeInfo () {
 
@@ -7,10 +8,23 @@ function HomeInfo () {
         <>
         
         <center>
-            <div className="starwarsFont" style={{color:"yellow"}}>
-            <div style={{fontSize:"80px"}}>Star Wars</div>
+            <div className="starwarsFont top-space" style={{color:"yellow"}}>
+            <div style={{fontSize:"80px"}}>Jeremy Wars</div>
         <div style={{fontSize:"30px" , width:"50%"}}>
-        Here you can find the information you desire to know of all your favorite Star Wars Characters! All you have to do is click the button below.
+        Welcome to Jeremy Wars were you can find all of your Star Wars information. Through here you'll be able to search results on your favorite
+        characters, planets, vehicles and species that the Star Wars Universe has brought us. Enjoy your discovery!
+        </div>
+        <div className="button-space">
+        <Button size="lg" variant="outline-light"  href="/character">Character Search</Button>
+        </div>
+        <div className="button-space">
+        <Button size="lg" variant="outline-light"  href="/planet">Planet Search</Button>
+        </div>
+        <div className="button-space">
+        <Button size="lg" variant="outline-light"  href="/vehicle">Vehicle Search</Button>
+        </div>
+        <div className="button-space">
+        <Button size="lg" variant="outline-light"  href="/species">Species Search</Button>
         </div>
         </div>
         </center>
