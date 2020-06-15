@@ -4,11 +4,14 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom
 import Home from './pages/home';
 import Planet from './pages/Planet';
 import Vehicle from './pages/Vehicle';
-import Species from './pages/Species'
+import Species from './pages/Species';
+import NavigationBar from '../src/components/NavBar';
 
 function App() {
   return (
+    <>
     <Router>
+    <NavigationBar/>
       <Switch>
         <Redirect exact from="/" to="/home"/>
         <Route exact path="/home" component={Home}/>
@@ -18,6 +21,7 @@ function App() {
         <Route render={() => <h1>404: Page not found</h1>}/>
       </Switch>
     </Router>
+    </>
   );
 }
 
