@@ -34,7 +34,7 @@ function CharacterSearch () {
         <>
         <div class="starwarsFont">
             <center>
-            <h1  style={{color: "yellow"}}>Star Wars Character</h1>
+            <h1  style={{color: "yellow"}}>Star Wars </h1>
                 <div >
                     <Form onSubmit={handleSubmit}>
                         <Form.Label style={{color: "yellow"}}>Name of Character: </Form.Label>
